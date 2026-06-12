@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+</head>
+<body>
+
+<h1>Employee Task Dashboard</h1>
+
+<a href="/add">Add Task</a>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Employee</th>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for task in tasks %}
+    <tr>
+        <td>{{ task[0] }}</td>
+        <td>{{ task[1] }}</td>
+        <td>{{ task[2] }}</td>
+        <td>{{ task[3] }}</td>
+
+        <td>
+            <a href="/update/{{task[0]}}">Complete</a>
+            <a href="/delete/{{task[0]}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
